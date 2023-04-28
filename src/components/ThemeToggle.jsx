@@ -18,7 +18,7 @@ export const ThemeToggle = () => {
   };
 
   return (
-    <button onClick={handleToggle}>
+    <button className="font-semibold" onClick={handleToggle}>
       {isDarkMode ? "Light Mode" : "Dark Mode"}
     </button>
   );
