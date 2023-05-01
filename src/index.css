@@ -47,6 +47,12 @@
     @apply box-border;
   }
 
+  /* input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    content: url("https://cdn3.iconfinder.com/data/icons/faticons/32/remove-01-512.png");
+    width: 20px;
+  } */
+
   @media (prefers-reduced-motion: reduce) {
     html:focus-within {
       scroll-behavior: auto;

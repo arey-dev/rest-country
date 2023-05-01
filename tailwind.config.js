@@ -23,6 +23,10 @@ export default {
       },
     },
   },
-  // eslint-disable-next-line no-undef
-  plugins: [require("@tailwindcss/container-queries"),],
+  plugins: [
+    // eslint-disable-next-line no-undef
+    require("@tailwindcss/container-queries"),
+    // eslint-disable-next-line no-undef
+    require("@tailwindcss/forms"),
+  ],
 };
