@@ -11,7 +11,7 @@
   body {
     @apply min-h-screen;
     @apply font-sans;
-    @apply bg-light-background;
+    @apply bg-light-background dark:bg-dark-background;
 
     text-rendering: optimizeSpeed;
   }
