@@ -25,7 +25,7 @@ export const SearchBar = () => {
         </button>
         <input
           type="search"
-          className="relative m-0 -mr-0.5 block w-[1px] min-w-0 flex-auto rounded-r bg-transparent  border-none focus:ring-0 px-3 py-[0.25rem] text-sm font-semibold leading-[1.5] text-light-input outline-none transition duration-200 ease-in-out focus:text-light-input dark:text-dark-input dark:placeholder:text-dark-input dark:focus:text-dark-input"
+          className="relative m-0 -mr-0.5 block w-[1px] min-w-0 flex-auto rounded-r bg-transparent  border-none focus:ring-0 px-3 py-[0.25rem] text-sm font-semibold leading-[1.5] text-light-input outline-none placeholder:transition duration-200 ease-in-out placeholde: focus:text-light-input dark:text-dark-input dark:placeholder:text-dark-input dark:focus:text-dark-input"
           placeholder="Search for a country..."
           aria-label="Search"
           aria-describedby="button-addon1"

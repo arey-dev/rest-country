@@ -2,6 +2,14 @@ import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
 
+const regions = [
+  { id: 0, region: "Africa" },
+  { id: 1, region: "America" },
+  { id: 2, region: "Asia" },
+  { id: 3, region: "Europe" },
+  { id: 4, region: "Oceania" },
+];
+
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
@@ -9,11 +17,13 @@ function classNames(...classes) {
 export const Filter = () => {
   return (
     <Menu as="div" className="relative inline-block text-left">
-      <div>
-        <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-md ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
-          Options
+      <div className="w-56">
+        <Menu.Button className="inline-flex w-full justify-between rounded-md bg-light-element px-4 py-4 text-sm font-semibold text-light-text shadow-md ring-2 ring-inset ring-light-element hover:bg-light-background dark:bg-dark-element dark:text-dark-text dark:ring-dark-element dark:hover:bg-dark-background">
+          <span className="transition duration-150 ease-in-out">
+            Filter By Region
+          </span>
           <ChevronDownIcon
-            className="-mr-1 h-5 w-5 text-gray-400"
+            className="-mr-1 h-5 w-5 text-light-text dark:text-dark-text transition duration-150 ease-in-out"
             aria-hidden="true"
           />
         </Menu.Button>
@@ -28,65 +38,28 @@ export const Filter = () => {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items className="absolute left-0 z-10 mt-2 w-56 origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-          <div className="py-1">
-            <Menu.Item>
-              {({ active }) => (
-                <a
-                  href=""
-                  className={classNames(
-                    active ? "bg-gray-100 text-gray-900" : "text-gray-700",
-                    "block px-4 py-2 text-sm"
-                  )}
-                >
-                  Account settings
-                </a>
-              )}
-            </Menu.Item>
-            <Menu.Item>
-              {({ active }) => (
-                <a
-                  href="#"
-                  className={classNames(
-                    active ? "bg-gray-100 text-gray-900" : "text-gray-700",
-                    "block px-4 py-2 text-sm"
-                  )}
-                >
-                  Support
-                </a>
-              )}
-            </Menu.Item>
-            <Menu.Item>
-              {({ active }) => (
-                <a
-                  href="#"
-                  className={classNames(
-                    active ? "bg-gray-100 text-gray-900" : "text-gray-700",
-                    "block px-4 py-2 text-sm"
-                  )}
-                >
-                  License
-                </a>
-              )}
-            </Menu.Item>
-            <form method="POST" action="#">
-              <Menu.Item>
+        <Menu.Items className="absolute left-0 z-10 mt-2 w-56 py-3.5 origin-top-left rounded-md bg-light-element shadow-md ring-1 ring-light-element ring-opacity-5 focus:outline-none dark:bg-dark-element dark:ring-dark-element">
+          <div>
+            {regions.map((region) => (
+              <Menu.Item key={region.id}>
                 {({ active }) => (
-                  <button
-                    type="submit"
+                  <a
+                    href=""
                     className={classNames(
-                      active ? "bg-gray-100 text-gray-900" : "text-gray-700",
-                      "block w-full px-4 py-2 text-left text-sm"
+                      active
+                        ? "bg-light-background dark:bg-dark-background"
+                        : "text-light-text",
+                      "block px-4 py-1 text-sm font-semibold dark:text-dark-text "
                     )}
                   >
-                    Sign out
-                  </button>
+                    {region.region}
+                  </a>
                 )}
               </Menu.Item>
-            </form>
+            ))}
           </div>
         </Menu.Items>
       </Transition>
     </Menu>
   );
-}
+};
