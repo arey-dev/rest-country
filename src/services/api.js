@@ -1,5 +1,5 @@
 export const getAllCountries = async () => {
-  const URL = "https://restcountries.com/v3.1/all";
+  const URL = "https://restcountries.com/v3.1/all"
 
   try {
     const response = await fetch(URL);

@@ -1,13 +1,11 @@
-import { SearchBar } from "./SearchBar";
-import { Filter } from "./Filter";
 
-export const FilterableSearch = () => {
+// eslint-disable-next-line react/prop-types
+export const FilterableSearch = ({children}) => {
   return (
     <section>
       <h2 className="sr-only">Search and filter a countries</h2>
-      <div className="container mx-auto px-3">
-        <SearchBar />
-        <Filter />
+      <div className="container mx-auto mb-5 px-3">
+        {children}
       </div>
     </section>
   );
