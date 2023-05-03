@@ -14,7 +14,9 @@ export const DetailSection = () => {
           alt=""
         />
         <section>
-          <h3 className="font-bold text-2xl mb-6">Belgium</h3>
+          <h3 className="font-bold text-light-text text-2xl mb-6 dark:text-dark-text transition duration-150 ease-in-out">
+            Belgium
+          </h3>
           <div className="mb-9">
             <DetailRow name="Native Name" value="Belgie"></DetailRow>
             <DetailRow name="Population" value="11319511"></DetailRow>
@@ -32,7 +34,9 @@ export const DetailSection = () => {
           </div>
 
           <footer>
-            <h4 className="font-semibold text-xl mb-2">Border Countries: </h4>
+            <h4 className="font-semibold text-xl mb-4 text-light-text transition duration-150 ease-in-out dark:text-dark-text">
+              Border Countries:{" "}
+            </h4>
             <p>
               <BorderCountry value="France"></BorderCountry>
               <BorderCountry value="Germany"></BorderCountry>
