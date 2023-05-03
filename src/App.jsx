@@ -1,9 +1,7 @@
 import { Header } from "./components/Header";
-import { FilterableSearch } from "./components/FilterableSearch";
 import { ThemeToggle } from "./components/ThemeToggle";
-import { SearchBar } from "./components/SearchBar";
-import { Filter } from "./components/Filter";
-import { CountryList } from "./components/CountryList";
+// import { Home } from "./pages/Home";
+import { CountryDetail } from "./pages/CountryDetail";
 
 const App = () => {
   return (
@@ -11,11 +9,8 @@ const App = () => {
       <Header>
         <ThemeToggle />
       </Header>
-      <FilterableSearch>
-        <SearchBar />
-        <Filter />
-      </FilterableSearch>
-      <CountryList />
+      {/* <Home/> */}
+      <CountryDetail />
     </>
   );
 };
