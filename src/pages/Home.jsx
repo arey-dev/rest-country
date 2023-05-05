@@ -2,21 +2,23 @@ import { FilterableSearch } from "../components/FilterableSearch";
 import { SearchBar } from "../components/SearchBar";
 import { Filter } from "../components/Filter";
 import { CountryList } from "../components/CountryList";
-import { Header } from "../components/Header";
-import { ThemeToggle } from "../components/ThemeToggle";
-
+import { useLoaderData } from "react-router-dom";
+import { useEffect } from "react";
 
 export const Home = () => {
+  const { countries, q } = useLoaderData();
+
+  useEffect(() => {
+    document.getElementById("q").value = q;
+  }, [q]);
+
   return (
     <>
-      <Header>
-        <ThemeToggle/>
-      </Header>
       <FilterableSearch>
-        <SearchBar />
+        <SearchBar defaultVal={q} />
         <Filter />
       </FilterableSearch>
-      <CountryList />
+      <CountryList countries={countries} />
     </>
   );
 };

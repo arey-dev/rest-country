@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
-import { DetailRow } from "./DetailRow";
+import { DetailRow } from "./DetailRow"
+// import { Link } from "react-router-dom";
 
 export const CountryCard = ({
   flag,

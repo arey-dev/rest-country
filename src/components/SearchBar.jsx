@@ -1,6 +1,9 @@
-export const SearchBar = () => {
+import { Form } from "react-router-dom";
+
+// eslint-disable-next-line react/prop-types
+export const SearchBar = ({ defaultVal }) => {
   return (
-    <form action="search" className="mb-8">
+    <Form role="search" className="mb-8">
       <div className="relative mb-4 flex w-full flex-wrap items-stretch bg-light-element rounded-md  shadow-md dark:bg-dark-element">
         {/* Search button */}
         <button
@@ -24,13 +27,16 @@ export const SearchBar = () => {
           </svg>
         </button>
         <input
-          type="search"
           className="relative m-0 -mr-0.5 block w-[1px] min-w-0 flex-auto rounded-r bg-transparent  border-none focus:ring-0 px-3 py-[0.25rem] text-sm font-semibold leading-[1.5] text-light-input outline-none placeholder:transition duration-200 ease-in-out placeholde: focus:text-light-input dark:text-dark-input dark:placeholder:text-dark-input dark:focus:text-dark-input"
+          type="search"
+          id="q"
+          name="q"
           placeholder="Search for a country..."
           aria-label="Search"
           aria-describedby="button-addon1"
+          defaultValue={defaultVal}
         />
       </div>
-    </form>
+    </Form>
   );
 };

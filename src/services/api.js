@@ -1,5 +1,5 @@
 export const getAllCountries = async () => {
-  const URL = "https://restcountries.com/v3.1/all"
+  const URL = "https://restcountries.com/v3.1/all";
 
   try {
     const response = await fetch(URL);
@@ -8,8 +8,9 @@ export const getAllCountries = async () => {
       throw new Error(`HTTP error!`, response.status);
     }
 
-    const result = await response.json();
-    return result;
+    let countries = await response.json();
+
+    return countries;
   } catch (error) {
     console.log(error);
     return null;
