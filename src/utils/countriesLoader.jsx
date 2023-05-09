@@ -4,7 +4,7 @@ import { getAllCountries } from "../services/api";
 export const countriesLoader = async ({ request }) => {
   const url = new URL(request.url);
   const q = url.searchParams.get("q");
-  let countries = await getAllCountries(q);
+  let countries = await getAllCountries();
 
   if (q) {
     // get all the countries that matches the query

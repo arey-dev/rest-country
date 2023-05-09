@@ -1,13 +1,14 @@
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
+import { Link } from "react-router-dom";
 
 const regions = [
-  { id: 0, region: "Africa" },
-  { id: 1, region: "America" },
-  { id: 2, region: "Asia" },
-  { id: 3, region: "Europe" },
-  { id: 4, region: "Oceania" },
+  { id: "Africa", name: "Africa" },
+  { id: "Americas", name: "America" },
+  { id: "Asia", name: "Asia" },
+  { id: "Europe", name: "Europe" },
+  { id: "Oceania", name: "Oceania" },
 ];
 
 function classNames(...classes) {
@@ -43,8 +44,8 @@ export const Filter = () => {
             {regions.map((region) => (
               <Menu.Item key={region.id}>
                 {({ active }) => (
-                  <a
-                    href=""
+                  <Link
+                    to={`?region=${region.id}`}
                     className={classNames(
                       active
                         ? "bg-light-background dark:bg-dark-background"
@@ -52,8 +53,8 @@ export const Filter = () => {
                       "block px-4 py-1 text-sm font-semibold dark:text-dark-text "
                     )}
                   >
-                    {region.region}
-                  </a>
+                    {region.name}
+                  </Link>
                 )}
               </Menu.Item>
             ))}
