@@ -1,18 +1,30 @@
 import { createBrowserRouter } from "react-router-dom";
 import { Home } from "../pages/Home";
+import { Root } from "../pages/root";
 import { CountryDetail } from "../pages/CountryDetail";
-import { ErrorPage } from "../pages/ErrorPage";
+import { ErrorPage } from "../components/ErrorPage";
 import { countriesLoader } from "../utils/countriesLoader";
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: <Root />,
     errorElement: <ErrorPage />,
-    loader: countriesLoader,
-  },
-  {
-    path: "/detail",
-    element: <CountryDetail />,
+    children: [
+      {
+        errorElement: <ErrorPage />,
+        children: [
+          {
+            index: true,
+            element: <Home />,
+            loader: countriesLoader,
+          },
+          {
+            path: "/detail",
+            element: <CountryDetail />,
+          },
+        ],
+      },
+    ],
   },
 ]);
