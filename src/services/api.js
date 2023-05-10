@@ -17,8 +17,8 @@ export const getAllCountries = async () => {
   }
 };
 
-export const getCountryByName = async (countryName) => {
-  const url = `https://restcountries.com/v3.1/name/${countryName}`;
+export const getCountryByCode = async (code) => {
+  const url = `https://restcountries.com/v3.1/alpha/${code}`;
 
   try {
     const response = await fetch(url);

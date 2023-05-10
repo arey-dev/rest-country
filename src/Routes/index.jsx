@@ -3,7 +3,8 @@ import { Home } from "../pages/Home";
 import { Root } from "../pages/root";
 import { CountryDetail } from "../pages/CountryDetail";
 import { ErrorPage } from "../components/ErrorPage";
-import { countriesLoader } from "../utils/countriesLoader";
+import { countriesLoader } from "../loaders/countriesLoader";
+import { countryLoader } from "../loaders/countryLoader";
 
 export const router = createBrowserRouter([
   {
@@ -20,8 +21,9 @@ export const router = createBrowserRouter([
             loader: countriesLoader,
           },
           {
-            path: "/detail",
+            path: "/detail/:id",
             element: <CountryDetail />,
+            loader: countryLoader,
           },
         ],
       },
