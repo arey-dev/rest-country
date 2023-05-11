@@ -9,7 +9,7 @@ export const CountryList = ({ countries }) => {
       <h2 className="sr-only">Countries</h2>
       <div className="container mx-auto px-3 py-5 grid grid-cols-1 gap-4 place-items-center">
         {countries.map((country) => (
-          <Link key={country.alpha2Code} to={`detail/${country.cca2}`}>
+          <Link key={country.cca3} to={`detail/${country.cca2}`}>
             <CountryCard
               flag={country.flags.svg}
               countryName={country.name.common}

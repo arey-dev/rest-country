@@ -1,6 +1,10 @@
 /* eslint-disable react/prop-types */
 import { DetailRow } from "./DetailRow";
 import { BorderCountry } from "./BorderCountry";
+import { formatNumber } from "../Utilities/formatNumber";
+import { displayCurrencies } from "../Utilities/displayCurrencies";
+import { displayLanguages } from "../Utilities/displayLanguages";
+import { displayNativeNames } from "../Utilities/displayNativeNames";
 
 export const DetailSection = ({ countryData }) => {
   const [country] = countryData;
@@ -20,9 +24,12 @@ export const DetailSection = ({ countryData }) => {
           <div className="mb-9">
             <DetailRow
               name="Native Name"
-              value={country.name.native}
+              value={displayNativeNames(country.name)}
             ></DetailRow>
-            <DetailRow name="Population" value={country.population}></DetailRow>
+            <DetailRow
+              name="Population"
+              value={formatNumber(country.population)}
+            ></DetailRow>
             <DetailRow name="Region" value={country.region}></DetailRow>
             <DetailRow name="Sub Region" value={country.subregion}></DetailRow>
             <DetailRow name="Capital" value={country.capital}></DetailRow>
@@ -31,11 +38,11 @@ export const DetailSection = ({ countryData }) => {
             <DetailRow name="Top Level" value={country.tld}></DetailRow>
             <DetailRow
               name="Currencies"
-              value={country.currencies[0]}
+              value={displayCurrencies(country.currencies)}
             ></DetailRow>
             <DetailRow
               name="Languages"
-              value={country.languages[0]}
+              value={displayLanguages(country.languages)}
             ></DetailRow>
           </div>
 

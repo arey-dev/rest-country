@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
-import { DetailRow } from "./DetailRow"
-// import { Link } from "react-router-dom";
+import { DetailRow } from "./DetailRow";
+import { formatNumber } from "../Utilities/formatNumber";
 
 export const CountryCard = ({
   flag,
@@ -14,7 +14,7 @@ export const CountryCard = ({
       <img className="max-w-full" src={flag} alt={"flag of " + countryName} />
       <div className="p-7">
         <h3 className="font-bold text-lg mb-3.5">{countryName}</h3>
-        <DetailRow name="Population" value={population} />
+        <DetailRow name="Population" value={formatNumber(population)} />
         <DetailRow name="Region" value={region} />
         <DetailRow name="Capital" value={capital} />
         <footer className="p-2"></footer>
