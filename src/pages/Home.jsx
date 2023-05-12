@@ -1,7 +1,9 @@
-import { FilterableSearch } from "../components/FilterableSearch";
-import { SearchBar } from "../components/SearchBar";
-import { Filter } from "../components/Filter";
-import { CountryList } from "../components/CountryList";
+import {
+  FilterableSearch,
+  Filter,
+  SearchBar,
+  CountryList,
+} from "../components";
 import { useLoaderData, useSearchParams } from "react-router-dom";
 import { useEffect } from "react";
 
@@ -15,9 +17,7 @@ export const Home = () => {
   }, [q]);
 
   const filteredCountries = regionFilter
-    ? Array.from(countries).filter(
-        (country) => country.region === regionFilter
-      ) 
+    ? Array.from(countries).filter((country) => country.region === regionFilter)
     : countries;
 
   return (

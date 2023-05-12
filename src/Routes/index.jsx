@@ -1,10 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
-import { Home } from "../pages/Home";
-import { Root } from "../pages/root";
-import { CountryDetail } from "../pages/CountryDetail";
-import { ErrorPage } from "../components/ErrorPage";
-import { countriesLoader } from "../loaders/countriesLoader";
-import { countryLoader } from "../loaders/countryLoader";
+import { Root, Home, CountryDetail } from "../pages";
+import { countriesLoader, countryLoader } from "../loaders";
+import { ErrorPage } from "../components";
 
 export const router = createBrowserRouter([
   {

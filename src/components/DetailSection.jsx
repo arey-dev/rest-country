@@ -1,10 +1,12 @@
 /* eslint-disable react/prop-types */
 import { DetailRow } from "./DetailRow";
 import { BorderCountry } from "./BorderCountry";
-import { formatNumber } from "../Utilities/formatNumber";
-import { displayCurrencies } from "../Utilities/displayCurrencies";
-import { displayLanguages } from "../Utilities/displayLanguages";
-import { displayNativeNames } from "../Utilities/displayNativeNames";
+import {
+  formatNumber,
+  displayCurrencies,
+  displayNativeNames,
+  displayLanguages,
+} from "../Utilities";
 
 export const DetailSection = ({ countryData }) => {
   const [country] = countryData;

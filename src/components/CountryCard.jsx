@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { DetailRow } from "./DetailRow";
-import { formatNumber } from "../Utilities/formatNumber";
+import { formatNumber } from "../Utilities";
 
 export const CountryCard = ({
   flag,
