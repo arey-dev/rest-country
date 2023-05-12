@@ -4,11 +4,11 @@ import { Form } from "react-router-dom";
 export const SearchBar = ({ defaultVal }) => {
   return (
     <Form role="search" className="mb-8">
-      <div className="relative mb-4 flex w-full flex-wrap items-stretch bg-light-element rounded-md  shadow-md dark:bg-dark-element">
+      <div className="relative mb-4 flex w-full md:w-[28rem] flex-wrap items-stretch bg-light-element rounded-md  shadow-md dark:bg-dark-element">
         {/* Search button */}
         <button
           className="relative z-[2] flex items-center rounded-l bg-primary pr-4 py-4 pl-8 text-xs font-semibold leading-tight text-light-input transition duration-150 ease-in-out hover:shadow-lg focus:bg-primary-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-primary-800 active:shadow-lg dark:text-dark-input"
-          type="button"
+          type="submit"
           id="button-addon1"
           data-te-ripple-init
           data-te-ripple-color="light"

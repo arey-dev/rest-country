@@ -1,6 +1,8 @@
-export const Button = () => {
+// eslint-disable-next-line react/prop-types
+export const Button = ({onButtonClick}) => {
   return (
     <button
+    onClick={onButtonClick}
       type="button"
       className="rounded bg-light-element flex justify-center items-center w-28 py-1.5 gap-2 text-base font-light leading-normal text-light-text shadow-custom hover:bg-light-background hover:shadow-custom focus:bg-light-background focus:outline-none hover:ring-2 ring-inset ring-light-element active:bg-light-background dark:bg-dark-element dark:text-dark-text dark:ring-dark-element dark:hover:bg-dark-background dark:focus:bg-dark-background"
     >

@@ -1,7 +1,7 @@
 // eslint-disable-next-line react/prop-types
 export const DetailRow = ({ name, value }) => {
   return (
-    <p className="mb-1">
+    <p className="mb-1.5">
       <span className="font-semibold text-light-text dark:text-dark-text">
         {name}:{" "}
       </span>
