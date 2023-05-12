@@ -3,7 +3,7 @@ export const DetailNav = ({ children }) => {
   return (
     <>
       <nav>
-        <div className="max-w-[22rem] xs:container   mx-auto mb-6 px-3">
+        <div className="container max-sm:w-11/12 mx-auto max-md:pt-5 mb-16 lg:mb-[4.5rem] px-3">
           {children}
         </div>
       </nav>

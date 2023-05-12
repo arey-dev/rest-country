@@ -3,7 +3,7 @@ import { Form } from "react-router-dom";
 // eslint-disable-next-line react/prop-types
 export const SearchBar = ({ defaultVal }) => {
   return (
-    <Form role="search" className="mb-8">
+    <Form role="search" className="max-md:mb-8">
       <div className="relative mb-4 flex w-full md:w-[28rem] flex-wrap items-stretch bg-light-element rounded-md  shadow-md dark:bg-dark-element">
         {/* Search button */}
         <button

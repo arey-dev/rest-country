@@ -13,7 +13,7 @@ export const DetailSection = ({ countryData }) => {
   return (
     <section className="mb-14">
       <h2 className="sr-only">Country Details</h2>
-      <div className="max-w-[22rem] xs:container mx-auto lg:grid grid-cols-2 gap-12 xl:gap-20 px-3 text-base place-items-center">
+      <div className="max-sm:w-11/12 container mx-auto lg:grid grid-cols-2 gap-12 xl:gap-20 px-3 text-base place-items-center">
         <img
           className="flag mb-12 max-lg:aspect-video"
           src={country.flags.svg}
@@ -59,7 +59,7 @@ export const DetailSection = ({ countryData }) => {
               <h4 className="font-semibold text-xl md:text-lg lg:text-base mb-4 mr-4 items-start text-light-text transition duration-150 min-w-fit ease-in-out dark:text-dark-text">
                 Border Countries:{" "}
               </h4>
-              <p className="flex flex-wrap">
+              <p>
                 {country?.borders?.map((border, index) => (
                   <BorderCountry key={index} value={border} />
                 ))}

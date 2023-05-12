@@ -22,7 +22,7 @@ export const CountryCard = ({
         <DetailRow name="Population" value={formatNumber(population)} />
         <DetailRow name="Region" value={region} />
         <DetailRow name="Capital" value={capital} />
-        <footer className="p-2"></footer>
+        <footer className="p-1.5"></footer>
       </div>
     </article>
   );
