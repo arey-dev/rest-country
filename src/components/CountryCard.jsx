@@ -15,7 +15,7 @@ export const CountryCard = ({
     <article className="card max-sm:w-10/12">
       <Link to={`detail/${linkCode}`}>
         <img
-          className="flag max-lg:aspect-video hover:opacity-50"
+          className="flag aspect-video hover:opacity-50"
           src={flag}
           alt={"flag of " + countryName}
         />
