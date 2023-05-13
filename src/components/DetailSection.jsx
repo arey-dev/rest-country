@@ -62,8 +62,8 @@ export const DetailSection = ({ countryData, bordersData }) => {
               </h4>
               <p>
                 {bordersData ? (
-                  bordersData.map((country, index) => (
-                    <BorderCountry key={index} value={country.name.common} />
+                  bordersData.map((country) => (
+                    <BorderCountry key={country.cca3} linkCode={country.cca3} countryName={country.name.common} />
                   ))
                 ) : (
                   <DetailRow value="No Border Countries" />

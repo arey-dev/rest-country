@@ -12,7 +12,7 @@ export const CountryCard = ({
   linkCode,
 }) => {
   return (
-    <article className="card max-sm:w-10/12">
+    <article className="card max-sm:w-10/12 w-full">
       <Link to={`detail/${linkCode}`}>
         <img
           className="flag aspect-video hover:opacity-50"
