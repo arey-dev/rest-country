@@ -34,3 +34,27 @@ export const getCountryByCode = async (code) => {
     return null;
   }
 };
+
+export const getCountryByCodes = async (codes) => {
+  if (!codes && typeof codes !== "object") {
+    return;
+  }
+
+  const params = codes.join();
+
+  const url = `https://restcountries.com/v3.1/alpha?codes=${params.toLowerCase()}`;
+
+  try {
+    const response = await fetch(url);
+
+    if (!response.ok) {
+      throw new Error(`HTTP error!`, response.status);
+    }
+
+    const result = await response.json();
+    return result;
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
+};

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useLoaderData } from "react-router-dom";
 
 export const CountryDetail = () => {
-  const { country } = useLoaderData();
+  const { country, borders } = useLoaderData();
   const navigate = useNavigate();
 
   const handlePrevButton = () => {
@@ -15,7 +15,7 @@ export const CountryDetail = () => {
       <DetailNav>
         <Button onButtonClick={handlePrevButton} />
       </DetailNav>
-      <DetailSection countryData={country} />
+      <DetailSection countryData={country} bordersData={borders} />
     </>
   );
 };

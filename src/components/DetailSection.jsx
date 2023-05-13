@@ -8,8 +8,9 @@ import {
   displayLanguages,
 } from "../Utilities";
 
-export const DetailSection = ({ countryData }) => {
+export const DetailSection = ({ countryData, bordersData }) => {
   const [country] = countryData;
+
   return (
     <section className="mb-14">
       <h2 className="sr-only">Country Details</h2>
@@ -60,9 +61,9 @@ export const DetailSection = ({ countryData }) => {
                 Border Countries:{" "}
               </h4>
               <p>
-                {country?.borders?.map((border, index) => (
-                  <BorderCountry key={index} value={border} />
-                ))}
+                {bordersData ? bordersData.map((country, index) => (
+                  <BorderCountry key={index} value={country.name.common} />
+                )) : "No Border Countries"}
               </p>
             </div>
           </footer>
