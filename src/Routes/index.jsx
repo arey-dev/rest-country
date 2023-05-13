@@ -5,7 +5,7 @@ import { ErrorPage } from "../components";
 
 export const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/rest-country/",
     element: <Root />,
     errorElement: <ErrorPage />,
     children: [
@@ -18,7 +18,7 @@ export const router = createBrowserRouter([
             loader: countriesLoader,
           },
           {
-            path: "/detail/:id",
+            path: "/rest-country/detail/:id",
             element: <CountryDetail />,
             loader: countryLoader,
           },
