@@ -21,7 +21,7 @@ export const DetailSection = ({ countryData, bordersData }) => {
           alt={country.name.common}
         />
         <section>
-          <h3 className="font-bold text-light-text text-2xl mb-8 dark:text-dark-text transition duration-150 ease-in-out">
+          <h3 className="font-bold text-light-text text-3xl mb-8 dark:text-dark-text">
             {country.name.common}
           </h3>
 
@@ -57,15 +57,17 @@ export const DetailSection = ({ countryData, bordersData }) => {
 
           <footer>
             <div className="lg:flex">
-              <h4 className="font-semibold text-xl md:text-lg lg:text-base mb-4 mr-4 items-start text-light-text transition duration-150 min-w-fit ease-in-out dark:text-dark-text">
+              <h4 className="font-semibold text-xl md:text-lg mb-4 mr-4 items-start text-light-text min-w-fit dark:text-dark-text">
                 Border Countries:{" "}
               </h4>
               <p>
-                {bordersData
-                  ? bordersData.map((country, index) => (
-                      <BorderCountry key={index} value={country.name.common} />
-                    ))
-                  : "No Border Countries"}
+                {bordersData ? (
+                  bordersData.map((country, index) => (
+                    <BorderCountry key={index} value={country.name.common} />
+                  ))
+                ) : (
+                  <DetailRow value="No Border Countries" />
+                )}
               </p>
             </div>
           </footer>

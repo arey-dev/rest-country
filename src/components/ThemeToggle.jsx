@@ -1,16 +1,19 @@
-import { useState, useEffect } from "react";
+import { useState, useLayoutEffect } from "react";
 
 export const ThemeToggle = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(
+    localStorage.getItem("isDarkMode") === "true"
+  );
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const html = document.documentElement;
-
     if (isDarkMode) {
       html.classList.add("dark");
     } else {
       html.classList.remove("dark");
     }
+
+    localStorage.setItem("isDarkMode", isDarkMode);
   }, [isDarkMode]);
 
   const handleToggle = () => {
@@ -19,7 +22,7 @@ export const ThemeToggle = () => {
 
   return (
     <button
-      className="font-semibold dark:text-dark-text"
+      className="font-semibold lg:text-lg dark:text-dark-text"
       onClick={handleToggle}
     >
       <svg

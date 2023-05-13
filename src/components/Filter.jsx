@@ -19,12 +19,10 @@ export const Filter = () => {
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div className="w-56">
-        <Menu.Button className="inline-flex w-full justify-between rounded-md bg-light-element px-4 py-4 text-sm font-semibold text-light-text shadow-md ring-2 ring-inset ring-light-element hover:bg-light-background dark:bg-dark-element dark:text-dark-text dark:ring-dark-element dark:hover:bg-dark-background">
-          <span className="transition duration-150 ease-in-out">
-            Filter By Region
-          </span>
+        <Menu.Button className="inline-flex w-full justify-between rounded-md bg-light-element px-4 py-4 text-sm lg:text-base font-semibold text-light-text shadow-md ring-2 ring-inset ring-light-element hover:bg-light-background dark:bg-dark-element dark:text-dark-text dark:ring-dark-element dark:hover:bg-dark-background">
+          Filter By Region
           <ChevronDownIcon
-            className="-mr-1 h-5 w-5 text-light-text dark:text-dark-text transition duration-150 ease-in-out"
+            className="-mr-1 h-5 w-5 text-light-text dark:text-dark-text"
             aria-hidden="true"
           />
         </Menu.Button>
@@ -50,7 +48,7 @@ export const Filter = () => {
                       active
                         ? "bg-light-background dark:bg-dark-background"
                         : "text-light-text",
-                      "block px-4 py-1 text-sm font-semibold dark:text-dark-text "
+                      "block px-4 py-1 font-semibold dark:text-dark-text text-sm lg:text-base"
                     )}
                   >
                     {region.name}

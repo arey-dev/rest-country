@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { DetailRow } from "./DetailRow";
 import { formatNumber } from "../Utilities";
+import { Link } from "react-router-dom";
 
 export const CountryCard = ({
   flag,
@@ -8,13 +9,20 @@ export const CountryCard = ({
   population,
   region,
   capital,
+  linkCode,
 }) => {
   return (
-    <article className="card max-sm:w-[20rem]">
-      <img className="flag" src={flag} alt={"flag of " + countryName} />
+    <article className="card max-sm:w-10/12">
+      <Link to={`detail/${linkCode}`}>
+        <img
+          className="flag max-lg:aspect-video hover:opacity-50"
+          src={flag}
+          alt={"flag of " + countryName}
+        />
+      </Link>
       <div className="p-7">
         <h3
-          className="font-bold text-lg mb-3.5 line-clamp-1"
+          className="font-bold text-lg lg:text-xl mb-3.5 line-clamp-1"
           title={countryName}
         >
           {countryName}
