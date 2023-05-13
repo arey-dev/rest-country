@@ -36,7 +36,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Repo](https://github.com/arey-dev/rest-country)
-- Live Site URL: [Github Pages](https://your-live-site-url.com)
+- Live Site URL: [Github Pages](https://arey-dev.github.io/rest-country/)
 
 ## My process
 
