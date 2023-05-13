@@ -1,6 +1,5 @@
 import { DetailNav, DetailSection, Button } from "../components";
-import { useNavigate } from "react-router-dom";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 
 export const CountryDetail = () => {
   const { country, borders } = useLoaderData();

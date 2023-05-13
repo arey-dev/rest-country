@@ -61,9 +61,11 @@ export const DetailSection = ({ countryData, bordersData }) => {
                 Border Countries:{" "}
               </h4>
               <p>
-                {bordersData ? bordersData.map((country, index) => (
-                  <BorderCountry key={index} value={country.name.common} />
-                )) : "No Border Countries"}
+                {bordersData
+                  ? bordersData.map((country, index) => (
+                      <BorderCountry key={index} value={country.name.common} />
+                    ))
+                  : "No Border Countries"}
               </p>
             </div>
           </footer>
