@@ -1,21 +1,7 @@
-import { useState, useLayoutEffect } from "react";
+import { useDarkMode } from "../hooks";
 
 export const ThemeToggle = () => {
-  const [isDarkMode, setIsDarkMode] = useState(
-    localStorage.getItem("isDarkMode") === "true"
-  );
-
-  useLayoutEffect(() => {
-    const html = document.documentElement;
-    if (isDarkMode) {
-      html.classList.add("dark");
-    } else {
-      html.classList.remove("dark");
-    }
-
-    localStorage.setItem("isDarkMode", isDarkMode);
-  }, [isDarkMode]);
-
+  const [isDarkMode, setIsDarkMode] = useDarkMode();
   const handleToggle = () => {
     setIsDarkMode(!isDarkMode);
   };

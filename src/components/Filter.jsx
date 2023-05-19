@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 
 const regions = [
   { id: "Africa", name: "Africa" },
@@ -16,11 +16,16 @@ function classNames(...classes) {
 }
 
 export const Filter = () => {
+  const [searchParams] = useSearchParams();
+  const regionParam = searchParams.get("region");
+  
+
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div className="w-56">
         <Menu.Button className="inline-flex w-full justify-between rounded-md bg-light-element px-4 py-4 text-sm lg:text-base font-semibold text-light-text shadow-md ring-2 ring-inset ring-light-element hover:bg-light-background dark:bg-dark-element dark:text-dark-text dark:ring-dark-element dark:hover:bg-dark-background">
-          Filter By Region
+          {/* Filter By Region */}
+          {regionParam ? regionParam : "Filter By Region"}
           <ChevronDownIcon
             className="-mr-1 h-5 w-5 text-light-text dark:text-dark-text"
             aria-hidden="true"
