@@ -5,12 +5,16 @@ export const ErrorPage = () => {
   console.error(error);
 
   return (
-    <div id="error-page">
-      <h1>Oops!</h1>
-      <p>Sorry, an unexpected error has occurred.</p>
+    <div className="container grid place-content-center place-items-center gap-8 w-full h-[60vh] text-light-text dark:text-dark-text">
+      <h1 className="font-bold text-2xl lg:text-4xl">Oops!</h1>
+      <p className="font-medium text-xl lg:text-2xl">
+        Sorry, an unexpected error has occurred.
+      </p>
       <p>
-        <i>{error.statusText || error.message}</i>
+        <i className="text-base lg:text-lg">
+          {error.statusText || error.message}
+        </i>
       </p>
     </div>
   );
-}
+};

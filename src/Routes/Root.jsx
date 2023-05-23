@@ -1,7 +1,7 @@
 import { Header, ThemeToggle } from "../components";
 import { Outlet, useNavigation } from "react-router-dom";
 
-export const Root = () => {
+const Root = () => {
   const navigation = useNavigation();
   return (
     <>
@@ -14,3 +14,5 @@ export const Root = () => {
     </>
   );
 };
+
+export default Root;
