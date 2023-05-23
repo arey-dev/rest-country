@@ -7,7 +7,7 @@ import {
 import { useLoaderData, useSearchParams } from "react-router-dom";
 import { useEffect } from "react";
 
-export const Home = () => {
+const Home = () => {
   const { countries, q } = useLoaderData();
   const [searchParams] = useSearchParams();
   const regionFilter = searchParams.get("region");
@@ -30,3 +30,5 @@ export const Home = () => {
     </>
   );
 };
+
+export default Home;

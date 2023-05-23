@@ -11,6 +11,7 @@ import { FilterableSearch } from "./FilterableSearch";
 import { Header } from "./Header";
 import { SearchBar } from "./SearchBar";
 import { ThemeToggle } from "./ThemeToggle";
+import { SimpleSpinner } from "./SimpleSpinner";
 
 export {
   BorderCountry,
@@ -26,4 +27,5 @@ export {
   Header,
   SearchBar,
   ThemeToggle,
+  SimpleSpinner,
 };

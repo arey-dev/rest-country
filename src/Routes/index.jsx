@@ -1,7 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
-import { Root, Home, CountryDetail } from "../pages";
 import { countriesLoader, countryLoader } from "../loaders";
-import { ErrorPage } from "../components";
+import { ErrorPage, SimpleSpinner } from "../components";
+import { lazy, Suspense } from "react";
+import { Root } from "./Root";
+
+const Home = lazy(() => import("./Home"));
+const CountryDetail = lazy(() => import("./CountryDetail"));
 
 export const router = createBrowserRouter([
   {
@@ -14,12 +18,20 @@ export const router = createBrowserRouter([
         children: [
           {
             index: true,
-            element: <Home />,
+            element: (
+              <Suspense fallback={<SimpleSpinner />}>
+                <Home />
+              </Suspense>
+            ),
             loader: countriesLoader,
           },
           {
             path: "/rest-country/detail/:id",
-            element: <CountryDetail />,
+            element: (
+              <Suspense fallback={<SimpleSpinner />}>
+                <CountryDetail />
+              </Suspense>
+            ),
             loader: countryLoader,
           },
         ],

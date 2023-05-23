@@ -1,7 +1,7 @@
 import { DetailNav, DetailSection, Button } from "../components";
 import { useLoaderData, useNavigate } from "react-router-dom";
 
-export const CountryDetail = () => {
+const CountryDetail = () => {
   const { country, borders } = useLoaderData();
   const navigate = useNavigate();
 
@@ -18,3 +18,5 @@ export const CountryDetail = () => {
     </>
   );
 };
+
+export default CountryDetail
