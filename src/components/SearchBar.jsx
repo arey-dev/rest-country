@@ -1,9 +1,19 @@
 import { Form } from "react-router-dom";
-
+import { useRef } from "react";
 // eslint-disable-next-line react/prop-types
 export const SearchBar = ({ defaultVal }) => {
+  const inputRef = useRef(null);
+
+  // dont submit q param is empty and input value is empty
+  // to prevent unnecessary load of data.
+  const handleSubmit = (e) => {
+    if (!inputRef.current.value && !defaultVal) {
+      e.preventDefault();
+    }
+  };
+
   return (
-    <Form role="search" className="max-md:mb-8">
+    <Form role="search" onSubmit={handleSubmit} className="max-md:mb-8">
       <div className="relative mb-4 flex w-full md:w-[28rem] flex-wrap items-stretch bg-light-element rounded-md  shadow-md dark:bg-dark-element">
         {/* Search button */}
         <button
@@ -28,7 +38,6 @@ export const SearchBar = ({ defaultVal }) => {
         </button>
         <input
           className="relative m-0 -mr-0.5 block w-[1px] min-w-0 flex-auto rounded-r bg-transparent  border-none focus:ring-0 px-3 py-[0.25rem] text-sm lg:text-base leading-[1.5] text-light-input outline-none placeholder:transition duration-200 ease-in-out placeholder: focus:text-light-input dark:text-dark-input dark:placeholder:text-dark-input dark:focus:text-dark-input"
-
           type="search"
           id="q"
           name="q"
@@ -36,6 +45,7 @@ export const SearchBar = ({ defaultVal }) => {
           aria-label="Search"
           aria-describedby="button-addon1"
           defaultValue={defaultVal}
+          ref={inputRef}
         />
       </div>
     </Form>
