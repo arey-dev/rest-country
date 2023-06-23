@@ -1,4 +1,6 @@
-export const getAllCountries = async () => {
+import { matchSorter } from "match-sorter";
+
+export const getAllCountries = async (q) => {
   const URL = "https://restcountries.com/v3.1/all";
 
   try {
@@ -9,11 +11,18 @@ export const getAllCountries = async () => {
     }
 
     let countries = await response.json();
+    console.log("data loaded");
 
+    // sort country based on query
+    if (countries) {
+      countries = matchSorter(countries, q, {
+        keys: ["name.common"],
+        threshold: matchSorter.rankings.WORD_STARTS_WITH,
+      });
+    }
     return countries;
   } catch (error) {
-    console.log(error);
-    return null;
+    return error;
   }
 };
 

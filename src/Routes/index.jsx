@@ -8,6 +8,16 @@ import Root from "./Root";
 import Home from "./Home";
 const CountryDetail = lazy(() => import("./CountryDetail"));
 
+import { QueryClient } from "@tanstack/react-query";
+
+export const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 1000 * 10,
+    },
+  },
+});
+
 export const router = createBrowserRouter(
   [
     {
@@ -18,10 +28,10 @@ export const router = createBrowserRouter(
         {
           errorElement: <ErrorPage />,
           children: [
-            {
+            { 
               index: true,
               element: <Home />,
-              loader: countriesLoader,
+              loader: countriesLoader(queryClient),
             },
             {
               path: "/detail/:id",
