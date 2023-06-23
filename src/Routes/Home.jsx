@@ -4,13 +4,14 @@ import {
   SearchBar,
   CountryList,
 } from "../components";
-import { useLoaderData, useSearchParams } from "react-router-dom";
+import { useLoaderData, useSearchParams, useSubmit } from "react-router-dom";
 import { useEffect } from "react";
 
 const Home = () => {
-  const { countries, q } = useLoaderData();
   const [searchParams] = useSearchParams();
   const regionFilter = searchParams.get("region");
+  const { countries, q } = useLoaderData();
+  const submit = useSubmit();
 
   useEffect(() => {
     document.getElementById("q").value = q;
@@ -23,7 +24,7 @@ const Home = () => {
   return (
     <>
       <FilterableSearch>
-        <SearchBar defaultVal={q} />
+        <SearchBar defaultVal={q} submit={submit} />
         <Filter />
       </FilterableSearch>
       <CountryList countries={filteredCountries} />
