@@ -1,12 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
 
 import { countriesLoader, countryLoader } from "../loaders";
-import { ErrorPage, SimpleSpinner } from "../components";
-import { lazy, Suspense } from "react";
+import { ErrorPage } from "../components";
 
 import Root from "./Root";
 import Home from "./Home";
-const CountryDetail = lazy(() => import("./CountryDetail"));
+import CountryDetail from "./CountryDetail";
 
 import { QueryClient } from "@tanstack/react-query";
 
@@ -18,6 +17,9 @@ export const queryClient = new QueryClient({
   },
 });
 
+// adjust stale time
+// use react virtualized
+
 export const router = createBrowserRouter(
   [
     {
@@ -25,22 +27,18 @@ export const router = createBrowserRouter(
       element: <Root />,
       errorElement: <ErrorPage />,
       children: [
-        {
+        {git status
           errorElement: <ErrorPage />,
           children: [
-            { 
+            {
               index: true,
               element: <Home />,
               loader: countriesLoader(queryClient),
             },
             {
               path: "/detail/:id",
-              element: (
-                <Suspense fallback={<SimpleSpinner />}>
-                  <CountryDetail />
-                </Suspense>
-              ),
-              loader: countryLoader,
+              element: <CountryDetail />,
+              loader: countryLoader(queryClient),
             },
           ],
         },

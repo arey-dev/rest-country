@@ -1,8 +1,17 @@
 import { DetailNav, DetailSection, Button } from "../components";
-import { useLoaderData, useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { countryDetailQuery, countryBordersQuery } from "../loaders/countryLoader";
+import { useQuery } from "@tanstack/react-query";
 
 const CountryDetail = () => {
-  const { country, borders } = useLoaderData();
+  const params = useParams();
+  const { data: country } = useQuery(countryDetailQuery(params.id));
+
+  
+  const borderCountries = country[0]?.borders;
+
+  const {data: borders } = useQuery(countryBordersQuery(borderCountries))
+
   const navigate = useNavigate();
 
   const handlePrevButton = () => {

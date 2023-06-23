@@ -16,7 +16,7 @@ export const DetailSection = ({ countryData, bordersData }) => {
       <h2 className="sr-only">Country Details</h2>
       <div className="max-sm:w-11/12 container mx-auto lg:grid grid-cols-2 gap-12 xl:gap-20 px-3 text-base place-items-center">
         <img
-          className="flag mb-12 max-lg:aspect-video sm:max-lg:w-11/12 mx-auto"
+          className="flag mb-12 aspect-video sm:max-lg:w-11/12 mx-auto"
           src={country.flags.svg}
           alt={country.name.common}
         />
@@ -60,7 +60,7 @@ export const DetailSection = ({ countryData, bordersData }) => {
               <h4 className="font-semibold text-xl md:text-lg mb-4 mr-4 items-start text-light-text min-w-fit dark:text-dark-text">
                 Border Countries:{" "}
               </h4>
-              <p>
+              <div>
                 {bordersData ? (
                   bordersData.map((country) => (
                     <BorderCountry key={country.cca3} linkCode={country.cca3} countryName={country.name.common} />
@@ -68,7 +68,7 @@ export const DetailSection = ({ countryData, bordersData }) => {
                 ) : (
                   <DetailRow value="No Border Countries" />
                 )}
-              </p>
+              </div>
             </div>
           </footer>
         </section>

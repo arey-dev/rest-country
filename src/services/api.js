@@ -14,7 +14,7 @@ export const getAllCountries = async (q) => {
     console.log("data loaded");
 
     // sort country based on query
-    if (countries) {
+    if (q) {
       countries = matchSorter(countries, q, {
         keys: ["name.common"],
         threshold: matchSorter.rankings.WORD_STARTS_WITH,
@@ -37,6 +37,7 @@ export const getCountryByCode = async (code) => {
     }
 
     const result = await response.json();
+    console.log("country loaded")
     return result;
   } catch (error) {
     console.log(error);
@@ -61,6 +62,7 @@ export const getCountryByCodes = async (codes) => {
     }
 
     const result = await response.json();
+    console.log(result);
     return result;
   } catch (error) {
     console.log(error);
