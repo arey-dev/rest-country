@@ -17,9 +17,6 @@ export const queryClient = new QueryClient({
   },
 });
 
-// adjust stale time
-// use react virtualized
-
 export const router = createBrowserRouter(
   [
     {
@@ -27,7 +24,7 @@ export const router = createBrowserRouter(
       element: <Root />,
       errorElement: <ErrorPage />,
       children: [
-        {git status
+        {
           errorElement: <ErrorPage />,
           children: [
             {

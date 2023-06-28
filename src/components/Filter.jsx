@@ -18,7 +18,6 @@ function classNames(...classes) {
 export const Filter = () => {
   const [searchParams] = useSearchParams();
   const regionParam = searchParams.get("region");
-  
 
   return (
     <Menu as="div" className="relative inline-block text-left">
