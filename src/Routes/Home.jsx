@@ -5,7 +5,7 @@ import {
   CountryList,
 } from "../components";
 import { useLoaderData, useSearchParams, useSubmit } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import { useDebounce } from "rooks";
 import { useQuery } from "@tanstack/react-query";
 import { countryListQuery } from "../loaders/countriesLoader";
@@ -23,9 +23,14 @@ const Home = () => {
     document.getElementById("q").value = q;
   }, [q]);
 
-  const filteredCountries = regionFilter
-    ? Array.from(countries).filter((country) => country.region === regionFilter)
-    : countries;
+  // use memo hook to memoize the filtered countries value
+  const filteredCountries = useMemo(() => {
+    return regionFilter
+      ? Array.from(countries).filter(
+          (country) => country.region === regionFilter
+        )
+      : countries;
+  }, [regionFilter, countries]); // pass regionFilter and countries as dependencies
 
   return (
     <>
