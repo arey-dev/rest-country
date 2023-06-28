@@ -47,7 +47,7 @@ export const Filter = () => {
               <Menu.Item key={region.id}>
                 {({ active }) => (
                   <Link
-                    to={`?region=${region.id}`}
+                    to={`/?region=${region.id}`}
                     className={classNames(
                       active
                         ? "bg-light-background dark:bg-dark-background"
