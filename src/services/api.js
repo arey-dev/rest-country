@@ -11,8 +11,6 @@ export const getAllCountries = async (q) => {
     }
 
     let countries = await response.json();
-    console.log("data loaded");
-
     // sort country based on query
     if (q) {
       countries = matchSorter(countries, q, {
@@ -37,11 +35,9 @@ export const getCountryByCode = async (code) => {
     }
 
     const result = await response.json();
-    console.log("country loaded")
     return result;
   } catch (error) {
-    console.log(error);
-    return null;
+    return error;
   }
 };
 
@@ -62,10 +58,8 @@ export const getCountryByCodes = async (codes) => {
     }
 
     const result = await response.json();
-    console.log(result);
     return result;
   } catch (error) {
-    console.log(error);
-    return null;
+    return error;
   }
 };
